@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>weather</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+   
+  <strong>City:</strong><input type="search" name="city" [(ngModel)]="city">
+  <strong>Province:</strong><input type="search" name="state" [(ngModel)]="state">
+  <button (click)="searchLocation(city, state)">search</button>
+  <ion-grid *ngIf="weather">
+    <ion-row width-50 offset-25>
+<h2 class="name">{{weather.name}}</h2>
+
+
+
+
+<div class="desc">{{description}}</div>
+<h1 class="temp">{{temp}}&deg;</h1>
+
+<div class="icon"><img src="http://openweathermap.org/img/w/{{icon}}"></div>
+
+    </ion-row>
+<ion-row>
+  <ion-col width=100>
+<ion-list>
+  <ion-item>
+  <strong>Temp:</strong>{{temp}}
+  </ion-item>
+  <ion-item>
+      <strong>Pressure:</strong>{{pressure}}
+      </ion-item>
+      <ion-item>
+          <strong>Humidity:</strong>{{humidity}}
+          </ion-item>
+      <ion-item>
+
+          <strong>Temp-min:</strong>{{temp_min}}
+          </ion-item>
+          <ion-item>
+              <strong>Temp_max:</strong>{{temp_max}}
+              </ion-item>
+</ion-list>
+  </ion-col>
+</ion-row>
+  </ion-grid>
+  
+   
+</ion-content>
